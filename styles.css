@@ -7,15 +7,12 @@ body {
 }
 
 header {
-    background: #1f3c88;
+    background: #333;
     color: #fff;
-    padding: 1rem 5rem;
+    padding: 1rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    position: relative;
-    left: 0;
-    right: 0;
 }
 
 nav {
@@ -71,6 +68,8 @@ nav ul li a:hover {
     padding: 4rem 2rem;
     text-align: center;
     margin-bottom: 100px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .services {
@@ -89,11 +88,11 @@ nav ul li a:hover {
 }
 
 .service:hover {
-    transform: translateY(-15px);
+    transform: translateY(-5px);
 }
 
 footer {
-    background: #1f3c88;
+    background: linear-gradient(60deg, #1f3c88, #333);
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -139,4 +138,35 @@ footer {
     60% {
         transform: translateY(-15px);
     }
+}
+
+/* Media Queries pour petits écrans */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    .home-section {
+        padding: 2rem 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
