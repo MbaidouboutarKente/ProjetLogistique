@@ -1,50 +1,76 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f0f2f5;
+    color: #444;
 }
 
 header {
-    background: #333;
+    background: #1f3c88;
     color: #fff;
     padding: 1rem 5rem;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 1rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdd57;
 }
 
 .cta-button {
     display: inline-block;
     margin-top: 1rem;
     padding: 1rem 2rem;
-    background: #e67e22;
+    background: #ff6b6b;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s;
+    animation: bounce 2s infinite;
 }
 
 .cta-button:hover {
-    background: #d35400;
+    background: #ee5253;
+    transform: translateY(-2px);
 }
 
 .home-section {
-    padding: 2rem;
+    position: relative;
+    padding: 4rem 2rem;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .services {
@@ -55,22 +81,27 @@ nav ul li a {
 
 .service {
     background: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 30%;
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-15px);
 }
 
 footer {
-    background: #333;
+    background: #1f3c88;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .fade-in {
     animation: fadeIn 2s ease-in;
@@ -108,4 +139,4 @@ footer {
     60% {
         transform: translateY(-15px);
     }
-}
+    }
