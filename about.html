@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - LocationLogistique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+            
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        header {
+            background: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+     
+        .content { padding: 2rem; text-align: center; }
+        footer {
+            background: linear-gradient(60deg, #414349, #2e216b);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Media Queries pour petits écrans */
+        @media (max-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .content {
+                width: 90%;
+                padding: 1rem;
+                margin-bottom: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>À propos de LocationLogistique</h1>
+    </header>
+    <div class="content">
+        <h2>Notre Histoire</h2>
+        <p>LocationLogistique a été fondée pour simplifier la location d'équipements logistiques...</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 LocationLogistique. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
