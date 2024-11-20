@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Location d'équipements - LocationLogistique</title>
+        <link rel="stylesheet" href="styles.css">
+        <style> 
+            body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: url('bg.jpg') no-repeat center center fixed; background-size: cover; position: relative; color: #fff; } 
+            body::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: -1; }
+            header { background: rgba(51, 51, 51, 0.8); color: #fff; padding: 1rem 0; text-align: center; }
+            nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; } nav ul { list-style: none; padding: 0; display: flex; justify-content: center; width: 100%; } 
+            nav ul li { margin: 0 1rem; } 
+            nav ul li a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; } 
+            nav ul li a:hover { color: #ffdd57; } 
+            .content { padding: 2rem; text-align: center; background: rgba(255, 255, 255, 0.8); color: #333; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 2rem auto; width: 80%; } 
+            .content h2 { font-size: 2em; font-weight: bold; } 
+            .content img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem; } 
+            .content ul { text-align: left; margin: 1rem auto; padding: 0; list-style: none; } 
+            .content ul li { background: #f4f4f4; margin: 0.5rem 0; padding: 0.5rem; border-radius: 5px; } 
+            .content p, .content li { line-height: 1.6; } 
+            .details { display: none; text-align: left; margin: 1rem 0; padding: 1rem; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9; } 
+            .show-details { display: block; } 
+            .more-btn { 
+                display: inline-block; 
+                padding: 0.5rem 1rem; 
+                margin-top: 1rem; 
+                background: #e67e22; 
+                color: #fff; 
+                border: none; 
+                border-radius: 5px; 
+                cursor: pointer; 
+                transition: background 0.3s ease; 
+            } 
+           .service-detail ul li {
+                position: relative;
+                width: 100%;
+                min-height: 50px;
+            }
+            .service-detail ul li button{
+                position: absolute;
+                right: 10px;
+            }
+            .more-btn:hover, .less-btn:hover { background: #d35400; } 
+            footer { background: rgba(51, 51, 51, 0.8); color: #fff; text-align: center; padding: 1rem 0; position: fixed; bottom: 0; width: 100%; box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); } 
+            @media (max-width: 768px) { nav ul { flex-direction: column; align-items: center; } 
+            nav ul li { margin: 0.5rem 0; } 
+            .content { width: 90%; padding: 1rem; } } 
+        </style> 
+    </head> 
+    <body> 
+        <header> 
+            <nav> 
+                <ul> 
+                    <li>
+                        <a href="index.html">Accueil</a>
+                    </li> 
+                    <li><a href="about.html">À propos</a></li> 
+                    <li><a href="services.html">Services</a></li> 
+                    <li><a href="contact.html">Contact</a></li> 
+                </ul> 
+            </nav> 
+            <h1 class="fade-in">Location d'équipements</h1> 
+        </header> 
+        <section id="service-details" class="content"> 
+            <h2 class="fade-in">Détails de la Location d'équipements</h2> 
+            <img src="img/location.jpg" alt="Location d'équipements"> 
+            <div class="service-details"> 
+                <p> Notre service de location d'équipements vous permet de disposer des outils et des machines nécessaires pour vos projets, sans avoir à les acheter. Que ce soit pour des besoins temporaires ou pour essayer du matériel avant de l'acquérir, nous avons une vaste gamme d'équipements disponibles à la location. 
+
+                </p> 
+                <p> Voici quelques exemples d'équipements que nous proposons à la location : </p> 
+                <ul> 
+                    <li>Chariots élévateurs <button class="more-btn" onclick="toggleDetails('details1', this)">Plus</button>
+                         <div id="details1" class="details">
+                             <p>Les chariots élévateurs sont disponibles en différentes capacités et tailles pour répondre à vos besoins spécifiques en manutention de charges lourdes.</p>
+                              <!-- <button class="less-btn" onclick="toggleDetails('details1', this)">Moins</button> -->
+                        </div> 
+                    </li> 
+                    <li> Transpalettes <button class="more-btn" onclick="toggleDetails('details2', this)">Plus</button> 
+                        <div id="details2" class="details"> 
+                            <p>Nos transpalettes sont ergonomiques et robustes, parfaits pour le transport de palettes dans les entrepôts et les espaces de stockage.</p> 
+                            <!-- <button class="less-btn" onclick="toggleDetails('details2', this)">Moins</button>  -->
+                        </div> 
+                    </li> 
+                    <li> Grues mobiles <button class="more-btn" onclick="toggleDetails('details3', this)">Plus</button> 
+                        <div id="details3" class="details"> 
+                            <p>Nous offrons des grues mobiles avec des capacités de levage variées pour des projets de construction et de maintenance.</p> 
+                            <!-- <button class="less-btn" onclick="toggleDetails('details3', this)">Moins</button>  -->
+                        </div> 
+                    </li> 
+                    <li> Conveyors <button class="more-btn" onclick="toggleDetails('details4', this)">Plus</button> 
+                        <div id="details4" class="details"> 
+                            <p>Les convoyeurs facilitent le déplacement des matériaux et des produits dans vos installations, augmentant ainsi l'efficacité et la productivité.</p> 
+                            <!-- <button class="less-btn" onclick="toggleDetails('details4', this)">Moins</button>  -->
+                        </div> 
+                    </li> 
+                    <li> Equipements de manutention <button class="more-btn" onclick="toggleDetails('details5', this)">Plus</button> 
+                        <div id="details5" class="details"> 
+                            <p>Nos équipements de manutention incluent des solutions pour lever, déplacer et positionner des charges lourdes en toute sécurité.</p> 
+                            <!-- <button class="less-btn" onclick="toggleDetails('details5', this)">Moins</button>  -->
+                        </div> 
+                    </li> <li> Machines de conditionnement <button class="more-btn" onclick="toggleDetails('details6', this)">Plus</button> <div id="details6" class="details"> <p>Nous proposons des machines de conditionnement pour emballer, sceller et préparer vos produits pour la distribution.</p> <button class="less-btn" onclick="toggleDetails('details6', this)">Moins</button> </div> </li> 
+                    <li> Equipements de sécurité <button class="more-btn" onclick="toggleDetails('details7', this)">Plus</button> 
+                        <div id="details7" class="details"> 
+                            <p>Nos équipements de sécurité assurent la protection de votre personnel et de vos biens, incluant des casques, des harnais et plus encore.</p> 
+                            <!-- <button class="less-btn" onclick="toggleDetails('details7', this)">Moins</button>  -->
+                        </div> 
+                    </li> 
+                </ul> 
+                <p> Nos équipements sont régulièrement entretenus et inspectés pour garantir leur bon fonctionnement et votre sécurité. </p> 
+                <p>Pour obtenir un devis ou pour en savoir plus sur nos services de location, veuillez nous contacter via notre page <a href="contact.html">Contact</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 LocationLogistique. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+     function toggleDetails(id, button) {
+    var element = document.getElementById(id);
+    if (element.classList.contains('show-details')) {
+        element.classList.remove('show-details');
+        button.textContent = "Plus";
+    } else {
+        element.classList.add('show-details');
+        button.textContent = "Moins";
+    }
+}
+
+    </script>
+</body>
+</html>
