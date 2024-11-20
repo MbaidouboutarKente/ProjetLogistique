@@ -2,10 +2,27 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #444;
+    
+    /* Changer la couleur du texte pour qu'il soit lisible sur un fond sombre */
 }
 
+a{
+
+    text-decoration: none;
+} 
+h3 {
+    color: #fff;
+    font-size: 2em;
+}
+a p{
+    color: #fff;
+    padding: 0 auto;
+}
+a img{
+    /* min-height: 100px; */
+    height: 100px;
+    /* width: 1%; */
+}
 header {
     background: #333;
     color: #fff;
@@ -65,30 +82,76 @@ nav ul li a:hover {
 
 .home-section {
     position: relative;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 12rem 2rem;
     text-align: center;
-    margin-bottom: 100px;
-    background: #fff;
+    margin-bottom: 0px;
+    color: #fff;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto;
+    justify-content: center;
+    
+}
+.home-section img{
+    max-height: 300px;
+    width: 90%;
+}
+.home-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.74); /* Superposition noire avec une opacité de 50% */
+    z-index: -2; /* Assurer que la superposition est derrière le contenu */
 }
 
 .services {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 0.80rem; /* Réduction de l'espacement */
+    margin-top: 1.5rem; /* Réduction de la marge supérieure */
 }
-
 .service {
-    background: #fff;
-    padding: 2rem;
+    position: relative;
+    background: #4442426b;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+.service a .imgs{
+    display: flex;
+
+}
+.service p {
+    height: auto; /* Hauteur fixe du conteneur */
+    min-height: 100px;
+    overflow: hidden; /* Cache le texte qui dépasse */
+    position: relative;
+    padding: 10px;
+    margin-top: 0px;
+    background: transparent;
+    text-align: center;
 }
 
-.service:hover {
-    transform: translateY(-5px);
+.service p span {
+    display: inline-block;
+    position: absolute;
+    top: 5px; /* Commence légèrement en dessous du haut */
+    left: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 15s linear;
+}
+
+.service:hover p span {
+    transform: translateY(calc(-100% + 105px)); /* Défile jusqu'à la fin du texte */
+    transition: transform 10s linear; /* Durée ajustable pour le défilement */
 }
 
 footer {
@@ -100,13 +163,20 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+
 }
 
 .fade-in {
     animation: fadeIn 2s ease-in;
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: -10px;
 }
 
 .slide-in {
+    margin-top: 20px;
+    font-size: 3rem;
     animation: slideIn 2s ease-out;
 }
 
@@ -152,21 +222,72 @@ footer {
     }
 
     .services {
-        flex-direction: column;
-        align-items: center;
+        margin-top: 0; /* Supprime la marge du haut */
+        padding: 1rem; /* Ajoute un léger padding autour des services */
+        border-radius: 10px;
     }
 
-    .service {
-        width: 80%;
-        margin-bottom: 2rem;
-    }
-
-    .home-section {
-        padding: 2rem 1rem;
-    }
+  
 
     .cta-button {
         width: 100%;
         box-sizing: border-box;
     }
+    .home-section {
+        padding: 50px 0 200px 0; /* Supprime les marges pour que l'image couvre toute la section */
+        margin-bottom: 0px;
+        background: url('bg.jpg') no-repeat center center;
+        background-size: cover;
+        height: auto; /* Ajuste la hauteur pour s'adapter au contenu */
+    }
 }
+
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* contact */
